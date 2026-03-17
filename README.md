@@ -167,7 +167,7 @@ red-team-recon
 Clone the repository
 
 ```
-git clone https://github.com/YOUR_USERNAME/red-team-recon-automation-toolkit.git
+git clone https://github.com/Aarthi-Muniyandi/red-team-recon-automation-toolkit.git
 ```
 
 Navigate to the project directory
