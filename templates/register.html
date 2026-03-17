@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-5 col-lg-4">
+
+        <h4 class="text-center mb-3">Register</h4>
+
+        <form method="POST">
+            <input class="form-control form-control-sm mb-3"
+                   name="username"
+                   placeholder="Username"
+                   required>
+
+            <input class="form-control form-control-sm mb-3"
+                   name="password"
+                   type="password"
+                   placeholder="Password"
+                   required>
+
+            <button class="btn btn-primary w-100 btn-sm">Register</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

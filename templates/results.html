@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4 class="mb-3">Reconnaissance Results</h4>
+
+<p><strong>Target:</strong> {{ scan.target }}</p>
+<p><strong>Scan Date:</strong> {{ scan.scan_date }}</p>
+
+<hr>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <h5>Overall Risk Assessment</h5>
+        <p>
+            <strong>Risk Level:</strong> {{ scan.risk_level }} <br>
+            <strong>Score:</strong> {{ scan.risk_score }}/10
+        </p>
+    </div>
+</div>
+
+<p>
+    <strong>Risk Level:</strong>
+    <span class="badge bg-danger">{{ scan.risk_level }}</span>
+    (Score: {{ scan.risk_score }})
+</p>
+<hr>
+<a href="{{ url_for('download_pdf', scan_id=scan.id) }}"
+   class="btn btn-outline-dark btn-sm mb-3">
+    Download PDF Report
+</a>
+
+
+{% for r in results %}
+<div class="card mb-3">
+    <div class="card-header bg-dark text-white">
+        {{ r.module }}
+    </div>
+    <div class="card-body">
+        <pre>{{ r.output }}</pre>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

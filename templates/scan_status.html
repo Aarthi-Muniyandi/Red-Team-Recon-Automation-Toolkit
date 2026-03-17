@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4>Reconnaissance in Progress</h4>
+
+<p><strong>Target:</strong> {{ scan.target }}</p>
+<p>
+    Status:
+    <span class="text-warning">Running...</span>
+</p>
+
+<p>
+    This page will refresh automatically.
+    Please wait while reconnaissance is in progress.
+</p>
+<div class="progress mt-3">
+    <div class="progress-bar progress-bar-striped progress-bar-animated"
+         style="width: 100%">
+        Recon in progress…
+    </div>
+</div>
+
+<script>
+setTimeout(function() {
+    location.reload();
+}, 10000);
+</script>
+{% endblock %}

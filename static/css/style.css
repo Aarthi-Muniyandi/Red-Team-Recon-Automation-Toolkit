@@ -1,0 +1,83 @@
+body {
+    background-color: #f8f9fa;
+}
+pre {
+    white-space: pre-wrap;
+}
+/* ================= THEME VARIABLES ================= */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --card-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --nav-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #eaeaea;
+    --card-bg: #1e1e1e;
+    --border-color: #2c2c2c;
+    --nav-bg: #1a1a1a;
+}
+
+/* ================= GLOBAL ================= */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card, .table, .box {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.table {
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Buttons */
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-danger,
+.btn-outline-dark {
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-danger:hover,
+.btn-outline-dark:hover {
+    background-color: var(--border-color);
+}
+
+/* ===== Action Buttons ===== */
+.btn-new-scan {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.btn-dashboard {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-new-scan:hover,
+.btn-dashboard:hover,
+.btn-logout:hover {
+    opacity: 0.9;
+}
+

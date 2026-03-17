@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Scan History Dashboard</h4>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Target</th>
+            <th>Date</th>
+            <th>Risk</th>
+            <th>View</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for scan in scans %}
+        <tr>
+            <td>{{ scan.id }}</td>
+            <td>{{ scan.target }}</td>
+            <td>{{ scan.scan_date }}</td>
+            <td>{{ scan.risk_level }}</td>
+            <td>
+                <a href="/results/{{ scan.id }}" class="btn btn-sm btn-primary">
+                    View
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

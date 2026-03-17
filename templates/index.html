@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card p-4">
+    <h4>Start Reconnaissance</h4>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Target Domain / IP</label>
+            <input type="text" name="target" class="form-control" placeholder="example.com" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Start Recon</button>
+    </form>
+</div>
+{% endblock %}

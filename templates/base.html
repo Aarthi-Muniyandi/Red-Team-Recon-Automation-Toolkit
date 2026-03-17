@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Red Team Recon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<button id="themeToggle"
+        class="btn btn-sm btn-outline-secondary"
+        style="position: fixed; top: 15px; right: 15px; z-index: 1000;">
+    🌙
+</button>
+
+<div class="container mt-4">
+    <h2 class="text-center">Red Team Recon: Automation Tool Kit</h2>
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+</div>
+<br>
+{% if session.get("user_id") %}
+<div class="d-flex justify-content-center gap-2 mb-4">
+    <a href="{{ url_for('index') }}" class="btn btn-sm btn-new-scan">New Scan</a>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-dashboard">Dashboard</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-sm btn-logout">Logout</a>
+</div>
+
+{% endif %}
+
+<script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const currentTheme = localStorage.getItem("theme");
+
+    if (currentTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        toggleBtn.innerText = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        const theme = document.documentElement.getAttribute("data-theme");
+
+        if (theme === "dark") {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "light");
+            toggleBtn.innerText = "🌙";
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            toggleBtn.innerText = "☀️";
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Red Team Recon Report</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #111;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .risk-high {
+            color: red;
+            font-weight: bold;
+        }
+
+        .risk-medium {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .risk-low {
+            color: green;
+            font-weight: bold;
+        }
+
+        .box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            background: #f9f9f9;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            white-space: pre-wrap;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="header">
+    <h1>Red Team Reconnaissance Report</h1>
+    <h3>Automation Tool Kit</h3>
+
+    <p>
+        <strong>Target:</strong> 192.168.145.1 <br>
+        <strong>Scan ID:</strong> 15 <br>
+        <strong>Scan Date:</strong> 2026-03-17 09:29:42
+    </p>
+</div>
+
+<!-- ================= EXECUTIVE SUMMARY ================= -->
+<div class="section">
+    <h2>Executive Summary</h2>
+
+    <div class="box">
+        <p>
+            This report presents the results of an automated reconnaissance
+            assessment conducted on the specified target. The objective of
+            this assessment was to identify publicly exposed services and
+            infrastructure without exploiting the target.
+        </p>
+
+        <p>
+            <strong>Overall Risk Level:</strong>
+            
+                <span class="risk-medium">MEDIUM</span>
+            
+        </p>
+
+        <p>
+            <strong>Risk Score:</strong> 3 / 10
+        </p>
+    </div>
+</div>
+
+<!-- ================= RISK INTERPRETATION ================= -->
+<div class="section">
+    <h2>Risk Assessment Overview</h2>
+
+    <p>
+        The risk level is derived based on exposed services, open network ports,
+        and accessible resources identified during reconnaissance.
+    </p>
+
+    <ul>
+        <li><strong>LOW (0–2):</strong> Minimal exposure</li>
+        <li><strong>MEDIUM (3–5):</strong> Moderate exposure</li>
+        <li><strong>HIGH (6+):</strong> Significant exposure</li>
+    </ul>
+</div>
+
+<!-- ================= FINDINGS ================= -->
+<div class="section">
+    <h2>Reconnaissance Findings</h2>
+
+    
+        <h3>Live Host Detection</h3>
+        <pre>Starting Nmap 7.98 ( https://nmap.org ) at 2026-03-17 09:29 -0400
+Nmap scan report for 192.168.145.1
+Host is up (0.0019s latency).
+Nmap done: 1 IP address (1 host up) scanned in 0.60 seconds
+</pre>
+    
+        <h3>Directory Enumeration</h3>
+        <pre>No directories found.</pre>
+    
+        <h3>Technology Fingerprinting</h3>
+        <pre></pre>
+    
+        <h3>Port Scanning</h3>
+        <pre>Starting Nmap 7.98 ( https://nmap.org ) at 2026-03-17 09:29 -0400
+Nmap scan report for 192.168.145.1
+Host is up (2.2s latency).
+Not shown: 992 closed tcp ports (reset)
+PORT     STATE    SERVICE
+135/tcp  open     msrpc
+139/tcp  open     netbios-ssn
+445/tcp  open     microsoft-ds
+514/tcp  filtered shell
+902/tcp  open     iss-realsecure
+912/tcp  open     apex-mesh
+3306/tcp open     mysql
+5357/tcp open     wsdapi
+
+Nmap done: 1 IP address (1 host up) scanned in 11.86 seconds
+</pre>
+    
+        <h3>Subdomain Enumeration</h3>
+        <pre>No subdomains found.</pre>
+    
+</div>
+
+<!-- ================= RECOMMENDATIONS ================= -->
+<div class="section">
+    <h2>Security Observations & Recommendations</h2>
+
+    <div class="box">
+        <p><strong>Observations:</strong></p>
+        <ul>
+            <li>Multiple services may be exposed to the public internet.</li>
+            <li>Open ports increase the external attack surface.</li>
+        </ul>
+
+        <p><strong>Recommendations:</strong></p>
+        <ul>
+            <li>Restrict unnecessary open ports.</li>
+            <li>Apply firewall and access control rules.</li>
+            <li>Conduct periodic security assessments.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ================= DISCLAIMER ================= -->
+<div class="section">
+    <h2>Ethical Disclaimer</h2>
+
+    <p>
+        This reconnaissance activity was conducted strictly for educational
+        and authorized security assessment purposes. No exploitation or
+        intrusive actions were performed.
+    </p>
+</div>
+
+<hr>
+<p style="text-align:center; font-size:12px;">
+    Generated by Red Team Recon Automation Tool Kit
+</p>
+
+</body>
+</html>
